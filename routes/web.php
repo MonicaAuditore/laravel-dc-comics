@@ -20,6 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/comics', [ComicController::class, 'index'] );
+// Route::get('/comics', [ComicController::class, 'index'] );
 
-// Route::resource('/', ComicController::class);
+Route::resource('/comics', ComicController::class);
