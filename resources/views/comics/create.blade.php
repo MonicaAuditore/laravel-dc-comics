@@ -12,7 +12,7 @@
           @csrf
 
           <div class="mb-3">
-            <label for="title" class="form-label">Titolo</label>
+            <label for="title" class="form-label">Titolo *</label>
             <input type="text" class="form-control" name="title" id="title" required maxlength="255" placeholder="Inserisci il titolo...">
           </div>
           <div class="mb-3">
@@ -28,7 +28,7 @@
             <input type="number" class="form-control" name="price" id="price" placeholder="Inserisci il prezzo...">
           </div>
           <div class="mb-3">
-            <label for="series" class="form-label">Serie</label>
+            <label for="series" class="form-label">Serie *</label>
             <input type="text" class="form-control" name="series" id="series" required maxlength="255" placeholder="Inserisci la serie...">
           </div>
           <div class="mb-3">
@@ -36,10 +36,11 @@
             <input type="date" class="form-control" name="sale_date" id="sale_date" placeholder="Inserisci la data di vendita...">
           </div>
           <div class="mb-3">
-            <label for="type" class="form-label">Tipo</label>
+            <label for="type" class="form-label">Tipo *</label>
             <input type="text" class="form-control" name="type" id="type" required maxlength="255" placeholder="Inserisci il tipo...">
           </div>
-          <button class="btn btn-primary" type="submit">
+          <p>I campo contrassegnati con * sono <b>obbligatori</b>.</p>
+          <button class="btn btn-success" type="submit">
             Salva
           </button>
         </form>
