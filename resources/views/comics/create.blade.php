@@ -13,7 +13,7 @@
 
           <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="Inserisci il titolo...">
+            <input type="text" class="form-control" name="title" id="title" required maxlength="255" placeholder="Inserisci il titolo...">
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
@@ -29,7 +29,7 @@
           </div>
           <div class="mb-3">
             <label for="series" class="form-label">Serie</label>
-            <input type="text" class="form-control" name="series" id="series" placeholder="Inserisci la serie...">
+            <input type="text" class="form-control" name="series" id="series" required maxlength="255" placeholder="Inserisci la serie...">
           </div>
           <div class="mb-3">
             <label for="sale_date" class="form-label">Data di vendita</label>
@@ -37,7 +37,7 @@
           </div>
           <div class="mb-3">
             <label for="type" class="form-label">Tipo</label>
-            <input type="text" class="form-control" name="type" id="type" placeholder="Inserisci il tipo...">
+            <input type="text" class="form-control" name="type" id="type" required maxlength="255" placeholder="Inserisci il tipo...">
           </div>
           <button class="btn btn-primary" type="submit">
             Salva
