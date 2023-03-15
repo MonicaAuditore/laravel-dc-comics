@@ -14,7 +14,9 @@
           <div class="card-body">
             <p class="card-title">{{ $comic->description }}</p>
           </div>
+
         </div>
+        <a href="{{ route('comics.index') }}" class="btn btn-primary mt-5 mb-5">Torna indietro</a>
       </div>
   </div>
 </div>
