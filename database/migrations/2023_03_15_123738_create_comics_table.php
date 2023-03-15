@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('title');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('thumb')->nullable();
             $table->float('price');
             $table->string('series');
