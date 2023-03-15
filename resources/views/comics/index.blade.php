@@ -14,7 +14,7 @@
          <div class="card text-center">
           <div class="card-body">
             <h2 class="card-title">{{ $comic->title }}</h2>
-            {{-- <a href="{{ route('comics.show') }}" class="btn btn-primary mt-5 mb-5">Vedi dettagli</a> --}}
+            <a href="#" class="btn btn-primary mt-5 mb-3">Vedi dettagli</a>
 
           </div>
          </div>
@@ -22,8 +22,6 @@
       @endforeach
     </div>
   </div>
-
-
 </div>
 
 @endsection
