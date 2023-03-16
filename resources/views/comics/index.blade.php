@@ -19,6 +19,7 @@
             <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary mt-5 mb-3">Vedi dettagli</a>
             <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning mt-5 mb-3">Modifica</a>
             <form 
+            onsubmit="return confirm('Sei sicuro di volerlo eliminare?')"
             action="{{ route('comics.destroy', $comic->id) }}" 
             method="POST">
             @csrf
