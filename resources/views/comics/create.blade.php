@@ -8,6 +8,17 @@
           <h1 class="card-title">Aggiungi un fumetto</h1>
           <a href="{{ route('comics.index') }}" class="btn btn-primary mt-5 mb-5">Torna indietro</a>
         </div>
+
+        @if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->$all() as $error)
+                  <li>{{  $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+
         <form action="{{ route('comics.store') }}" method="POST">
           @csrf
 
@@ -24,16 +35,16 @@
             <input type="text" class="form-control" name="thumb" id="thumb" placeholder="Inserisci url dell'immagine...">
           </div>
           <div class="mb-3">
-            <label for="price" class="form-label">Prezzo</label>
-            <input type="number" class="form-control" name="price" id="price" placeholder="Inserisci il prezzo...">
+            <label for="price" class="form-label">Prezzo *</label>
+            <input type="number" class="form-control" name="price" id="price" required min="1" placeholder="Inserisci il prezzo...">
           </div>
           <div class="mb-3">
             <label for="series" class="form-label">Serie *</label>
             <input type="text" class="form-control" name="series" id="series" required maxlength="255" placeholder="Inserisci la serie...">
           </div>
           <div class="mb-3">
-            <label for="sale_date" class="form-label">Data di vendita</label>
-            <input type="date" class="form-control" name="sale_date" id="sale_date" placeholder="Inserisci la data di vendita...">
+            <label for="sale_date" class="form-label">Data di vendita *</label>
+            <input type="date" class="form-control" name="sale_date" id="sale_date" required placeholder="Inserisci la data di vendita...">
           </div>
           <div class="mb-3">
             <label for="type" class="form-label">Tipo *</label>
