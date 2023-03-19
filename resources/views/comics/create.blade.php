@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 
 <div class="container">
@@ -10,17 +11,18 @@
         </div>
 
         @if ($errors->any())
-          <div class="alert alert-danger">
-            <ul>
-              @foreach ($errors->$all() as $error)
-                  <li>{{  $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-        @endif
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{  $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
 
         <form action="{{ route('comics.store') }}" method="POST">
           @csrf
+          
 
           <div class="mb-3">
             <label for="title" class="form-label">Titolo *</label>
@@ -36,7 +38,7 @@
           </div>
           <div class="mb-3">
             <label for="price" class="form-label">Prezzo *</label>
-            <input type="number" class="form-control" name="price" id="price" required min="1" placeholder="Inserisci il prezzo...">
+            <input type="number" class="form-control" name="price" id="price" required min="4" placeholder="Inserisci il prezzo...">
           </div>
           <div class="mb-3">
             <label for="series" class="form-label">Serie *</label>

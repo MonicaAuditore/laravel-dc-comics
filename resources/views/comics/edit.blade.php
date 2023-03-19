@@ -10,6 +10,17 @@
           <h1 class="card-title">Modifica il fumetto {{ $comic->id }}</h1>
           <a href="{{ route('comics.index') }}" class="btn btn-primary mt-5 mb-5">Torna indietro</a>
         </div>
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{  $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+
         <form action="{{ route('comics.update', $comic->id) }}" method="POST">
           @csrf
 

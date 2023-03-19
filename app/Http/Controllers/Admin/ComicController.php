@@ -32,6 +32,17 @@ class ComicController extends Controller
         return view('comics.create');
     }
 
+    private function validateData(Request $request) {
+    //Valido i dati 
+    $request->validate([
+    'title'=>'required|max:255',
+    'price'=>'required|numeric|min:4',
+    'series'=>'required|max:255',
+    'sale_date'=>'required|max:255',
+    'type'=>'required|max:255'
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -42,13 +53,7 @@ class ComicController extends Controller
     {
 
         //Valido i dati 
-        $request->validate([
-            'title'=>'required|max:255',
-            'price'=>'required|numeric|min:4',
-            'series'=>'required|max:255',
-            'sale_date'=>'required|max:255',
-            'type'=>'required|max:255'
-        ]);
+        $this->validateData($request);
 
         //Prendi i dati
         $data = $request->all();
@@ -100,8 +105,22 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $comic = Comic::find($id);
+
+    //Valido i dati 
+    $request->validate([
+        'title'=>'required|max:255',
+        'price'=>'required|numeric|min:4',
+        'series'=>'required|max:255',
+        'sale_date'=>'required|max:255',
+        'type'=>'required|max:255'
+    ]);
+
+        //Prendo i dati
         $data = $request->all();
+
+        //Utilizzo i dati
         $comic->update($data);
 
        return redirect()->route('comics.show', $comic->id);
