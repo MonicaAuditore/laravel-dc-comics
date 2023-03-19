@@ -26,11 +26,11 @@
 
           <div class="mb-3">
             <label for="title" class="form-label">Titolo *</label>
-            <input type="text" class="form-control" name="title" id="title" required maxlength="255" placeholder="Inserisci il titolo...">
+            <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" required maxlength="255" placeholder="Inserisci il titolo...">
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <textarea class="form-control" name="description" id="description" rows="3" placeholder="Inserisci la descrizione..."></textarea>
+            <textarea class="form-control" name="description" id="description" value="{{ old('description') }}" rows="3" placeholder="Inserisci la descrizione..."></textarea>
           </div>
           <div class="mb-3">
             <label for="thumb" class="form-label">Immagine</label>
@@ -38,19 +38,19 @@
           </div>
           <div class="mb-3">
             <label for="price" class="form-label">Prezzo *</label>
-            <input type="number" class="form-control" name="price" id="price" required min="4" placeholder="Inserisci il prezzo...">
+            <input type="number" class="form-control" name="price" id="price" value="{{ old('price') }}" required min="4" placeholder="Inserisci il prezzo...">
           </div>
           <div class="mb-3">
             <label for="series" class="form-label">Serie *</label>
-            <input type="text" class="form-control" name="series" id="series" required maxlength="255" placeholder="Inserisci la serie...">
+            <input type="text" class="form-control" name="series" id="series" value="{{ old('series') }}" required maxlength="255" placeholder="Inserisci la serie...">
           </div>
           <div class="mb-3">
             <label for="sale_date" class="form-label">Data di vendita *</label>
-            <input type="date" class="form-control" name="sale_date" id="sale_date" required placeholder="Inserisci la data di vendita...">
+            <input type="date" class="form-control" name="sale_date" id="sale_date" value="{{ old('sale_date') }}" required placeholder="Inserisci la data di vendita...">
           </div>
           <div class="mb-3">
             <label for="type" class="form-label">Tipo *</label>
-            <input type="text" class="form-control" name="type" id="type" required maxlength="255" placeholder="Inserisci il tipo...">
+            <input type="text" class="form-control" name="type" id="type" value="{{ old('type') }}" required maxlength="255" placeholder="Inserisci il tipo...">
           </div>
           <p>I campo contrassegnati con * sono <b>obbligatori</b>.</p>
           <button class="btn btn-success" type="submit">
